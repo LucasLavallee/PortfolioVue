@@ -1,0 +1,217 @@
+{
+    "projects": [
+        {
+            "name": "Earth Visualisation",
+            "description": "Projet personnel de data-visualisation utilisant la librairie Babylon.js. L'utilisateur peut se déplacer autour de la Terre est obtenir des informations complémentaires sur les différentes villes affichées.",
+            "technics": "",
+            "link": "",
+            "images": {
+                "main": {
+                    "link": "dataEarth/dataEarth.jpg",
+                    "alt": "dataviz"
+                },
+                "others": [
+                    {
+                        "link": "dataEarth/media/dataEarth_1.jpg",
+                        "alt": ""
+                    }
+                ]
+            },
+            "categories": [
+                {
+                    "name": "Webdev",
+                    "color": "#5c6bc0"
+                },
+                {
+                    "name": "Webdesign",
+                    "color": "#ff3c38"
+                },
+                {
+                    "name": "WebGL",
+                    "color": "#ffeb67"
+                },
+                {
+                    "name": "BabylonJS",
+                    "color": "#fff275"
+                }
+            ],
+            "uiClass": "projectStyle1"
+        },
+        {
+            "name": "Player audio",
+            "description": "Projet personnel en cours de réalisation d'un player audio réalisé en JS avec la Web Audio API. Il permet à l'utilisateur d'écouter ses propres musiques et de bénéficier d'une interface simple regroupant le strict nécessaire (aléatoire, repeat, volume, timeline...). Un visualiseur audio est également présent au centre de l'interface.",
+            "technics": "",
+            "link": "",
+            "images": {
+                "main": {
+                    "link": "player/playlist.jpg",
+                    "alt": ""
+                },
+                "others": []
+            },
+            "categories": [
+                {
+                    "name": "Webdev",
+                    "color": "#5c6bc0"
+                },
+                {
+                    "name": "Webdesign",
+                    "color": "#ff3c38"
+                },
+                {
+                    "name": "2D_Canvas",
+                    "color": "#ff8c42"
+                }
+            ],
+            "uiClass": "projectStyle0"
+        },
+        {
+            "name": "GAsp",
+            "description": "Projet tuteuré en cours de développement (2ème année IMAC) en collaboration avec Vincent Nozick (enseignant chercheur au laboratoire d'informatique Gaspard Monge (LIGM)), Hugo Hadfield (doctorant Cambridge University (UK)) et Steven De Keninck (Directeur Technique dans une société belge). Il s'agit d'une application web permettant de manipuler l'algèbre géométrique directement en javascript. Une serveur externe (Node.js) m'a permis de gérer la partie back-end que ce soit pour le système d'authentification ou encore la gestion du partage et des droits de modifications sur les projets. L'utilisateur a la possibilité de créer un compte sur le site afin d'enregistrer ses travaux et de les partager par la suite. Il dispose également de divers outils permettant de donner des droits de modifications sur ses projets à d'autres utilisateurs. Ce projet a été réalisé avec deux autres étudiants de l'IMAC. Pour ma part, je me suis occupé de l'interface principale (visualiseur, interface modulable...), ainsi que l'ensemble de la partie back-end.",
+            "technics": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a iaculis orci. Nam maximus sagittis faucibus. Etiam dictum ipsum leo, eget sagittis lorem sodales vitae. Ut ultricies sit amet nisl tincidunt tempor. Pellentesque commodo molestie varius. Vivamus malesuada euismod lorem eu fringilla. Aliquam semper accumsan placerat. Nullam tempus sapien in mauris convallis, a condimentum nisl viverra. Aenean sodales nulla sed sapien pretium ullamcorper. Morbi quis nisi in ante eleifend ornare. Praesent vulputate eget arcu a scelerisque. Mauris viverra ultrices mauris, vitae viverra urna tristique vel. Pellentesque scelerisque nisi id fringilla venenatis. ",
+            "link": "https://lucaslavallee.github.io/GAsp/",
+            "images": {
+                "main": {
+                    "link": "gasp/gasp.jpg",
+                    "alt": ""
+                },
+                "others": [
+                    {
+                        "link": "gasp/media/GAsp_1.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "gasp/media/GAsp_3.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "gasp/media/GAsp_4.png",
+                        "alt": ""
+                    }
+                ]
+            },
+            "categories": [
+                {
+                    "name": "Webdev",
+                    "color": "#5c6bc0"
+                },
+                {
+                    "name": "GanjaJS",
+                    "color": "#fff275"
+                }
+            ],
+            "uiClass": "projectStyle1"
+        },
+        {
+            "name": "Run In The Valley",
+            "description": "Jeu réalisé au sein de l'IMAC en groupe avec Audrey Combe et Nina De Castro. Il s'agit d'un jeu reprenant les caractéristiques et fonctionnalités du jeu mobile Temple Run dans un univers s'inspirant du jeu Monument Valley. Le joueur arrive sur un menu principal dans lequel il va pouvoir lancer une partie. Chaque partie génère un niveau aléatoire dans lequel le joueur va devoir avancer le plus loin possible et récolter le maximum de pièces. Mais attention, de nombreux obstacles viennent parsemer l'ensemble du niveau. Un système de score est mis en place pour permettre aux différents joueurs de se comparer. Il s'agit du premier jeu que nous avons réalisé en C++ avec OpenGL 3.1. (GLSL pour les shaders)",
+            "technics": "",
+            "link": "",
+            "images": {
+                "main": {
+                    "link": "runInTheValley/runinthevalley.png",
+                    "alt": ""
+                },
+                "others": [
+                    {
+                        "link": "runInTheValley/media/RunInTheValley_1.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "runInTheValley/media/RunInTheValley_2.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "runInTheValley/media/RunInTheValley_4.jpg",
+                        "alt": ""
+                    }
+                ]
+            },
+            "categories": [
+                {
+                    "name": "Prog",
+                    "color": "#68ad45"
+                },
+                {
+                    "name": "3D",
+                    "color": "#893584"
+                }
+            ],
+            "uiClass": "projectStyle2"
+        },
+        {
+            "name": "Pont-en-Royans 3D",
+            "description": "Environnement 3D s'inspirant du village Pont-en-Royans (Isère) réalisé dans le cadre du cours de Création 3D de l'IMAC. ",
+            "technics": "",
+            "link": "https://vimeo.com/309653208",
+            "images": {
+                "main": {
+                    "link": "pontEnRoyans/pontEnRoyans.jpg",
+                    "alt": ""
+                },
+                "others": [
+                    {
+                        "link": "pontEnRoyans/media/pontEnRoyans1.jpg",
+                        "alt": ""
+                    },
+                    {
+                        "link": "pontEnRoyans/media/pontEnRoyans2.jpg",
+                        "alt": ""
+                    }
+                ]
+            },
+            "categories": [
+                {
+                    "name": "Blender",
+                    "color": "#fff275"
+                },
+                {
+                    "name": "3D",
+                    "color": "#893584"
+                }
+            ],
+            "uiClass": "projectStyle1"
+        },
+        {
+            "name": "Temple Blender",
+            "description": "Test d'un environnement 3D fait sur Blender avec le moteur de rendu Blender Cycles.",
+            "technics": "",
+            "link": "",
+            "images": {
+                "main": {
+                    "link": "3dTemple/temple_vue_dessus.jpg",
+                    "alt": ""
+                },
+                "others": [
+                    {
+                        "link": "3dTemple/media/temple_brasero.jpg",
+                        "alt": ""
+                    },
+                    {
+                        "link": "3dTemple/media/temple_inside.jpg",
+                        "alt": ""
+                    },
+                    {
+                        "link": "3dTemple/media/temple_isometrique.jpg",
+                        "alt": ""
+                    },
+                    {
+                        "link": "3dTemple/media/temple_vue_dessus.jpg",
+                        "alt": ""
+                    }
+                ]
+            },
+            "categories": [
+                {
+                    "name": "Blender",
+                    "color": "#fff275"
+                },
+                {
+                    "name": "3D",
+                    "color": "#893584"
+                }
+            ],
+            "uiClass": "projectStyle0"
+        }
+    ]
+}

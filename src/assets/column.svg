@@ -1,0 +1,16 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 214">
+  <defs>
+    <style>
+      .columnSvg {
+        fill: #fff;
+        stroke: #282828;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <title>column</title>
+  <rect class="columnSvg" x="2" y="2" width="60" height="60" rx="12" ry="12"/>
+  <rect class="columnSvg" x="2" y="77" width="60" height="60" rx="12" ry="12"/>
+  <rect class="columnSvg" x="2" y="152" width="60" height="60" rx="12" ry="12"/>
+</svg>

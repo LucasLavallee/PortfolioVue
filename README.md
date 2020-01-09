@@ -1,6 +1,6 @@
 # Portfolio Lucas Lavallée
 
-Projet de portfolio réalisé dans le cadre d'un cours à l'IMAC. Il se composent de différentes informations concernant mon parcours professionnel ainsi que les différents projets sur lesquels j'ai pu travailler.
+Projet de portfolio réalisé dans le cadre d'un cours à l'IMAC. Il se compose de différentes informations concernant mon parcours professionnel ainsi que les différents projets sur lesquels j'ai pu travailler.
 
 Utilisation de GSAP pour les différentes animations présentent sur le site.
 

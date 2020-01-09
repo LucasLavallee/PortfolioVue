@@ -36,136 +36,134 @@
 
 <script>
 import { TimelineMax, Power1, Power3 } from 'gsap'
-import {mapActions, mapGetters} from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import store from '@/store/index.js'
 
 export default {
-  name: "app",
+  name: 'app',
   data: () => {
     return {
       tl: null,
       mobileMenuTl: null,
       navigation: {
-        "from": {
-          path: "",
-          name: ""
+        'from': {
+          path: '',
+          name: ''
         },
-        "to": {
-          path: "",
-          name: ""
+        'to': {
+          path: '',
+          name: ''
         }
       }
     }
   },
   methods: {
-    transitionOut(to, name) {
+    transitionOut (to, name) { //Manage page transition
       const from = this.$router.currentRoute.path
 
-      if(from == to) {
+      if (from === to) {
         return
       }
       this.navigation = {
-        "from": {
+        'from': {
           path: this.$router.currentRoute.path,
           name: this.$router.currentRoute.name
         },
-        "to": {
+        'to': {
           path: to,
           name: name
         }
       }
 
       this.changeComponentLoaded(false)
-  
+
       this.updateNavigation(
         this.navigation
       )
 
-      this.tl = new TimelineMax({ 
+      this.tl = new TimelineMax({
         onComplete: this.finishedAnimation
       })
 
-      //Timeline description for pages transition
+      // Timeline description for pages transition
 
-      this.tl.to(".navigationChange", {
+      this.tl.to('.navigationChange', {
         display: 'block'
       }, 0)
-      .to(".panTransition1", {
-        duration: 0.5,
-        ease: Power1.easeNone,
-        top: 0,
-      }, 0)
-      .to(".panTransition2", {
-        duration: 0.6,
-        ease: Power1.easeNone,
-        top: 0
-      }, 0)
-      .to(".panTransition3", {
-        duration: 0.8,
-        ease: Power1.easeNone,
-        top: 0
-      }, 0)
-      .to(".panTransition4", {
-        duration: 0.95,
-        ease: Power1.easeNone,
-        top: 0
-      }, 0)
-      .to(".movingTitle", {
-        duration: 0.6,
-        ease:  Power3.easeNone,
-        left: 0
-      }, 0.35)
+        .to('.panTransition1', {
+          duration: 0.5,
+          ease: Power1.easeNone,
+          top: 0
+        }, 0)
+        .to('.panTransition2', {
+          duration: 0.6,
+          ease: Power1.easeNone,
+          top: 0
+        }, 0)
+        .to('.panTransition3', {
+          duration: 0.8,
+          ease: Power1.easeNone,
+          top: 0
+        }, 0)
+        .to('.panTransition4', {
+          duration: 0.95,
+          ease: Power1.easeNone,
+          top: 0
+        }, 0)
+        .to('.movingTitle', {
+          duration: 0.6,
+          ease: Power3.easeNone,
+          left: 0
+        }, 0.35)
     },
-    finishedAnimation() {
-      //change route when animation ends
+    finishedAnimation () {
+      // change route when animation ends
       const path = this.getNextPath
-      if(path !== "")
-        this.$router.push({ path: path })
+      if (path !== '') { this.$router.push({ path: path }) }
     },
-    openMobileMenu() {
+    openMobileMenu () { //Manage mobile menu opening
       this.mobileMenuTl = new TimelineMax({
       })
 
       this.mobileMenuTl
-      .to(".routerLink", {
+        .to('.routerLink', {
           opacity: 0,
           duration: 0.1
-      })
-      .to("#menu", {
-        display: 'flex',
-        left: 0,
-        duration: 0.3
-      })
-      .to(".routerLink", {
+        })
+        .to('#menu', {
+          display: 'flex',
+          left: 0,
+          duration: 0.3
+        })
+        .to('.routerLink', {
           opacity: 1,
           duration: 0.4,
           stagger: 0.1
-      })
-      .to("#leaveMobileMenu", {
+        })
+        .to('#leaveMobileMenu', {
           opacity: 1,
           y: 0,
           duration: 0.4
-      },0.5)
+        }, 0.5)
     },
-    leaveMobileMenu() {
-      if(this.mobileMenuTl)
-        this.mobileMenuTl.reverse()
+    leaveMobileMenu () { //Manage mobile menu closing
+      if (this.mobileMenuTl) { this.mobileMenuTl.reverse() }
     },
     ...mapActions([
       'updateNavigation',
       'changeComponentLoaded'
     ])
   },
-  mounted() {
-    this.tl = new TimelineMax({ 
+  mounted () {
+    this.tl = new TimelineMax({
       onComplete: this.finishedAnimation
     })
 
-    //Check if new route is loaded before animation out
+    // Check if new route is loaded before reversing transition animation
 
     store.watch(this.getComponentLoadingState, (state) => {
-      console.log(state)
-      if(state){
+      if (state) {
+        window.scrollTo(0, 0)
         this.tl.reverse()
         this.changeComponentLoaded(false)
       }
@@ -230,8 +228,8 @@ export default {
     &:nth-child(6)
       background-color #d7fff1
 
-  .navigationChange 
-    position absolute
+  .navigationChange
+    position fixed
     overflow hidden
     text-align center
     z-index 16
@@ -245,7 +243,7 @@ export default {
       bottom 20%
       right 50%
 
-    .titleNav 
+    .titleNav
       font-size 8em
       opacity 0
       &.movingTitle
@@ -256,10 +254,8 @@ export default {
       &#toTitle2
         left 150%
 
-    
       @media screen and (max-width: 900px)
-        font-size 4em 
-      
+        font-size 4em
 
   #app
     font-family Avenir-medium
@@ -282,18 +278,18 @@ export default {
       margin 0 50px
 
       @media screen and (max-width: 600px)
-        margin 0 0px 
+        margin 0 0px
 
   #menu
     justify-content space-around
 
     a
       margin 0 25px
-      opacity 1 
+      opacity 1
 
     #leaveMobileMenu
       display none
-    
+
     @media screen and (max-width: 600px)
       display none
       background-color #fff
@@ -306,7 +302,7 @@ export default {
       font-size 2em
       justify-content center
       left -100%
-      margin 0px 0px  
+      margin 0px 0px
 
       a
         margin 20px
@@ -331,9 +327,9 @@ export default {
       width auto
 
     @media screen and (max-width: 600px)
-      display flex 
+      display flex
 
-  .menu 
+  .menu
     display flex
     align-items flex-end
 

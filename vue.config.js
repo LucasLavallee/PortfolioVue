@@ -19,6 +19,5 @@ module.exports = {
       .use('glslify')
       .loader('glslify-loader')
       .end()
-
   }
 }

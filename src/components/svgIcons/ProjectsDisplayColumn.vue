@@ -8,33 +8,31 @@
 </template>
 
 <script>
-    import { TimelineMax } from 'gsap'
-    import {mapActions, mapGetters} from 'vuex'
-    import store from '@/store/index.js'
+import { mapGetters } from 'vuex'
 
-    export default {
-        name: 'projectDisplayColumn',
-        data() {
-            return {
-                tl: null,
-                activeProjectDisplay: null
-            }
-        },
-        computed: {
-            ...mapGetters([
-            'getActiveProjectDisplay'
-            ])
-        },
-        mounted: function () {
-            this.activeProjectDisplay = this.getActiveProjectDisplay
-        },
-        methods: {
-        }
+export default {
+  name: 'projectDisplayColumn',
+  data () {
+    return {
+      tl: null,
+      activeProjectDisplay: null
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getActiveProjectDisplay'
+    ])
+  },
+  mounted: function () {
+    this.activeProjectDisplay = this.getActiveProjectDisplay
+  },
+  methods: {
+  }
+}
 </script>
 
 <style lang="stylus">
-    #svgProjectsColumn 
+    #svgProjectsColumn
         height 40px
         width auto
 

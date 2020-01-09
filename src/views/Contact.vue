@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+import { mapActions } from 'vuex'
 import { TimelineMax } from 'gsap'
 
 export default {
@@ -38,36 +38,36 @@ export default {
   data: () => {
     return {
       inputFilled: {
-        name: "",
-        mail: "",
-        subject: "",
-        message: ""
+        name: '',
+        mail: '',
+        subject: '',
+        message: ''
       },
       tl: null
     }
   },
   methods: {
-    updateInputValue(input) {
-      const newVal = this.$refs['input'+input.charAt(0).toUpperCase() + input.substring(1)].value
+    updateInputValue (input) { // Update input value onkeyup
+      const newVal = this.$refs['input' + input.charAt(0).toUpperCase() + input.substring(1)].value
       this.inputFilled[input] = newVal
     },
-    checkBeforeSend() {
+    checkBeforeSend () { // Make tests on inputs before send
       let errorFound = false
       let div = this.$refs.errorList
-      div.innerHTML = ""
+      div.innerHTML = ''
 
-      //Verification on fields before sending message
-      for(let field of Object.keys(this.inputFilled)) {
+      // Verification on fields before sending message
+      for (let field of Object.keys(this.inputFilled)) {
         let fieldName = field.charAt(0).toUpperCase() + field.substring(1)
-        this.$refs['input'+fieldName].style.borderColor = '#000'
-        if(this.inputFilled[field] === "") {
+        this.$refs['input' + fieldName].style.borderColor = '#000'
+        if (this.inputFilled[field] === '') {
           errorFound = true
 
-          div.innerHTML += "<p class='errorTile'>Field "+fieldName+" is empty ! :(</p>"
+          div.innerHTML += "<p class='errorTile'>Field " + fieldName + ' is empty ! :(</p>'
         }
       }
 
-      if(!errorFound) {
+      if (!errorFound) {
         this.sendMessage()
         return
       }
@@ -75,28 +75,28 @@ export default {
       this.tl = new TimelineMax({
       })
 
-      this.tl.to(".errorTile", {
-          x: 0,
-          opacity: 1,
-          duration: 0.2,
-          stagger: 0.1
+      this.tl.to('.errorTile', {
+        x: 0,
+        opacity: 1,
+        duration: 0.2,
+        stagger: 0.1
       }, 0)
     },
-    sendMessage() {
-      
+    sendMessage () {
+
     },
     ...mapActions([
       'changeComponentLoaded'
     ])
   },
-  mounted(){
-    this.changeComponentLoaded(true)
+  mounted () {
+    this.changeComponentLoaded(true) // When component is mounted, update state value to trigger page transition
   }
 }
 </script>
 
 <style lang="stylus">
-  #contact  
+  #contact
     width 100%
     height 100%
 
@@ -124,7 +124,7 @@ export default {
       &:focus
         + .inputName
           bottom 70%
-    
+
     textarea
       border 3px solid #000
       height 150px
@@ -154,7 +154,7 @@ export default {
     box-sizing border-box
 
   .inputName
-    text-align left 
+    text-align left
     padding-left 15px
     position absolute
     bottom 10px
@@ -174,7 +174,7 @@ export default {
     text-align right
     z-index 1
 
-    .errorTile 
+    .errorTile
       border-left 4px solid red
       padding 10px
       background-color #edf2fa

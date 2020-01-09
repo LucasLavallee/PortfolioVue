@@ -15,30 +15,30 @@ export default new Vuex.Store({
     projects: json.projects,
     navigation: {
       from: {
-        path: "",
-        name: ""
+        path: '',
+        name: ''
       },
       to: {
-        path: "",
-        name: ""
+        path: '',
+        name: ''
       }
     },
     componentLoaded: false,
-    activeProjectDisplay: 0, //0 = column, 1 = row
+    activeProjectDisplay: 0, // 0 = column, 1 = row
     homeDisplayData: {
       zoom: 0
     }
   },
   mutations: {
-    UPDATE_ACTIVE_PROJECT(state, newVal) {
+    UPDATE_ACTIVE_PROJECT (state, newVal) {
       state.activeProject = newVal
     },
-    SET_RANDOM_UI(state) {
+    SET_RANDOM_UI (state) {
       state.projects.map(n => {
-        n.uiClass = "projectStyle" + Math.floor(Math.random() * 3)
+        n.uiClass = 'projectStyle' + Math.floor(Math.random() * 3)
       })
     },
-    RESET_ACTIVE_PROJECT(state) {
+    RESET_ACTIVE_PROJECT (state) {
       state.activeProject = {
         id: null,
         size: [],
@@ -46,19 +46,19 @@ export default new Vuex.Store({
         color: null
       }
     },
-    UPDATE_NAVIGATION(state, newVal) {
+    UPDATE_NAVIGATION (state, newVal) {
       state.navigation = newVal
     },
-    CHANGE_COMPONENT_LOADED(state, bool) {
+    CHANGE_COMPONENT_LOADED (state, bool) {
       state.componentLoaded = bool
     },
-    CHANGE_ACTIVE_PROJECT_DISPLAY(state, val) {
+    CHANGE_ACTIVE_PROJECT_DISPLAY (state, val) {
       state.activeProjectDisplay = (val === 1 || val === 0) ? val : 0
     },
-    UPDATE_HOME_ZOOM(state, zoom) {
-      state.homeDisplayData.zoom = zoom ? zoom : state.homeDisplayData
+    UPDATE_HOME_ZOOM (state, zoom) {
+      state.homeDisplayData.zoom = zoom || state.homeDisplayData
     }
-  }, 
+  },
   actions: {
     updateNavigation: (store, props) => {
       store.commit('UPDATE_NAVIGATION', props)
@@ -69,7 +69,7 @@ export default new Vuex.Store({
     setRandomUi: (store) => {
       store.commit('SET_RANDOM_UI')
     },
-    resetActiveProject : (store) => {
+    resetActiveProject: (store) => {
       store.commit('RESET_ACTIVE_PROJECT')
     },
     changeComponentLoaded: (store, props) => {

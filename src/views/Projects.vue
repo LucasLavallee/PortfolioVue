@@ -7,7 +7,7 @@
       </div>
     </div>
     <div id="projectList" :class="getActiveProjectDisplay ? 'horizontal' : 'vertical'">
-      <div v-for="(project, index) in data" class="project" :class="project.uiClass === '' ? setRandomUi() : project.uiClass">
+      <div v-for="(project, index) in data" class="project" :class="project.uiClass === '' ? setRandomUi() : project.uiClass" :key="index">
         <div class="projectImg" @click="openDescription(index)" :id="'projectImg'+index" :ref="'projectImg'+index" :style="{'background-image': `url(${require('@/assets/projects/projectsImg/'+project.images.main.link)})`}">
           <p class="projectNumber">{{index + 1}}</p>
           <img v-if="project.images.main.link != ''" :alt="project.images.main.alt">
@@ -15,7 +15,7 @@
         <div class="projectName">
           <p >{{project.name}}</p>
           <div class="projectCategories">
-            <div v-for="(category) in project.categories" :style="{'background-color': `${category.color}`}">
+            <div v-for="(category) in project.categories" :style="{'background-color': `${category.color}`}" :key="category.name">
               <p>{{ category.name }}</p>
             </div>
           </div>
@@ -32,7 +32,7 @@ import store from '@/store/index.js'
 import Project from '@/components/projects/Project.vue'
 import ProjectsDisplayColumn from '@/components/svgIcons/ProjectsDisplayColumn.vue'
 import ProjectsDisplayRow from '@/components/svgIcons/ProjectsDisplayRow.vue'
-import {mapActions, mapGetters} from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import { TimelineMax } from 'gsap'
 
 export default {
@@ -42,14 +42,14 @@ export default {
     ProjectsDisplayColumn,
     ProjectsDisplayRow
   },
-  data() {
-      return {
-          tl: null
-      }
+  data () {
+    return {
+      tl: null
+    }
   },
   methods: {
-    openDescription(index) {
-      const div = this.$refs['projectImg'+index]
+    openDescription (index) { // Update active project when a click is trigger on a project
+      const div = this.$refs['projectImg' + index]
       const pos = div[0].getBoundingClientRect()
 
       this.updateActiveProject({
@@ -59,26 +59,25 @@ export default {
         color: div[0].style.backgroundColor
       })
     },
-    deployProjects() {
-      this.tl = new TimelineMax({ 
+    deployProjects () { //Animation that display projects
+      this.tl = new TimelineMax({
         onReverseComplete: this.onAnimReverse
       })
 
-      this.tl.to(".project", {
-          x: 0,
-          opacity: 1,
-          duration: 0.4,
-          stagger: 0.1
+      this.tl.to('.project', {
+        x: 0,
+        opacity: 1,
+        duration: 0.4,
+        stagger: 0.1
       }, 0)
     },
-    onAnimReverse() {
+    onAnimReverse () {
       this.changeActiveProjectDisplay(this.getActiveProjectDisplay === 1 ? 0 : 1)
       this.deployProjects()
     },
-    changeDisplay(val) {
+    changeDisplay (val) { //Change projects display (vertical || horizontal)
       const currentVal = this.getActiveProjectDisplay
-      if(currentVal === val)
-        return
+      if (currentVal === val) { return }
       this.tl.reverse()
     },
     ...mapActions([
@@ -89,7 +88,7 @@ export default {
     ])
   },
   computed: {
-    data() {
+    data () {
       return store.state.projects.map((item) => {
         return item
       })
@@ -99,8 +98,8 @@ export default {
       'getActiveProjectDisplay'
     ])
   },
-  mounted(){
-    this.changeComponentLoaded(true)
+  mounted () {
+    this.changeComponentLoaded(true) // When component is mounted, update state value to trigger page transition
     this.deployProjects()
   }
 }
@@ -112,7 +111,7 @@ export default {
   #scrollBar
     position fixed
     left 0
-    top 0 
+    top 0
     width sideBarWidth
     height 100%
     z-index 2
@@ -121,7 +120,7 @@ export default {
     background-color #fff
 
     @media screen and (max-width: 900px)
-      display none 
+      display none
 
   #projectList
     display flex
@@ -129,9 +128,8 @@ export default {
     padding-left sideBarWidth
     flex-direction column
 
-
     @media screen and (max-width: 900px)
-      padding-left 0 
+      padding-left 0
 
     &.horizontal
       flex-direction row
@@ -147,7 +145,7 @@ export default {
     transform translateX(-50px)
 
     @media screen and (max-width: 700px)
-      flex-direction column 
+      flex-direction column
       align-items center
 
     &:nth-child(2n)
@@ -155,15 +153,15 @@ export default {
       transform translateX(50px)
 
       @media screen and (max-width: 700px)
-        flex-direction column 
+        flex-direction column
 
   .projectName
     font-weight bold
-    text-align left 
+    text-align left
     margin 0 25px
     display flex
     flex-direction column
-    justify-content space-between 
+    justify-content space-between
 
   .projectStyle0
     .projectImg
@@ -185,13 +183,11 @@ export default {
         width 400px
         height 280px
 
-
   .projectStyle2
     .projectImg
       width 500px
       height 500px
       background-color #77AF9C
-
 
       @media screen and (max-width: 500px)
         width 400px
@@ -224,6 +220,5 @@ export default {
     display flex
     justify-content space-around
     margin 25px 0
-
 
 </style>

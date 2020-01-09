@@ -4,7 +4,7 @@ Projet de portfolio réalisé dans le cadre d'un cours à l'IMAC. Il se composen
 
 Utilisation de GSAP pour les différentes animations présentent sur le site.
 
-** Technos utilisées: **
+**Technos utilisées:**
 * VueJS (vuex, router)
 * GSAP (gestion des transitions de pages, apparitions d'éléments)
 * ThreeJS (background page d'accueil)

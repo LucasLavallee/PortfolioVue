@@ -100,6 +100,7 @@ export default {
         }, 0.6)
     },
     leaveProject () {
+      this.$emit('leaving')
       this.tl.reverse()
     }
   },

@@ -17,25 +17,8 @@
                     }
                 ]
             },
-            "categories": [
-                {
-                    "name": "Webdev",
-                    "color": "#5c6bc0"
-                },
-                {
-                    "name": "Webdesign",
-                    "color": "#ff3c38"
-                },
-                {
-                    "name": "WebGL",
-                    "color": "#ffeb67"
-                },
-                {
-                    "name": "BabylonJS",
-                    "color": "#fff275"
-                }
-            ],
-            "uiClass": "projectStyle1"
+            "category": "Webdev",
+            "keywords": ["Webdesign","WebGL", "BabylonJS"]
         },
         {
             "name": "Player audio",
@@ -49,21 +32,8 @@
                 },
                 "others": []
             },
-            "categories": [
-                {
-                    "name": "Webdev",
-                    "color": "#5c6bc0"
-                },
-                {
-                    "name": "Webdesign",
-                    "color": "#ff3c38"
-                },
-                {
-                    "name": "2D_Canvas",
-                    "color": "#ff8c42"
-                }
-            ],
-            "uiClass": "projectStyle0"
+            "category": "Webdev",
+            "keywords": ["Webdesign","2D_Canvas"]
         },
         {
             "name": "GAsp",
@@ -90,17 +60,8 @@
                     }
                 ]
             },
-            "categories": [
-                {
-                    "name": "Webdev",
-                    "color": "#5c6bc0"
-                },
-                {
-                    "name": "GanjaJS",
-                    "color": "#fff275"
-                }
-            ],
-            "uiClass": "projectStyle1"
+            "category": "Webdev",
+            "keywords": ["GanjaJS"]
         },
         {
             "name": "Run In The Valley",
@@ -127,17 +88,8 @@
                     }
                 ]
             },
-            "categories": [
-                {
-                    "name": "Prog",
-                    "color": "#68ad45"
-                },
-                {
-                    "name": "3D",
-                    "color": "#893584"
-                }
-            ],
-            "uiClass": "projectStyle2"
+            "category": "Prog",
+            "keywords":["3D", "OpenGL"]
         },
         {
             "name": "Pont-en-Royans 3D",
@@ -160,17 +112,8 @@
                     }
                 ]
             },
-            "categories": [
-                {
-                    "name": "Blender",
-                    "color": "#fff275"
-                },
-                {
-                    "name": "3D",
-                    "color": "#893584"
-                }
-            ],
-            "uiClass": "projectStyle1"
+            "category": "Modelisation",
+            "keywords":["Blender", "3D"]
         },
         {
             "name": "Temple Blender",
@@ -201,17 +144,8 @@
                     }
                 ]
             },
-            "categories": [
-                {
-                    "name": "Blender",
-                    "color": "#fff275"
-                },
-                {
-                    "name": "3D",
-                    "color": "#893584"
-                }
-            ],
-            "uiClass": "projectStyle0"
+            "category": "Modelisation",
+            "keywords": ["Blender", "3D"]
         }
     ]
 }

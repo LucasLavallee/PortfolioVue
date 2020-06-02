@@ -71,6 +71,12 @@ export default {
       ],
       experiences: [
         {
+          date: "26 Janv. 2020 - 29 Janv. 2020",
+          poste: "Développeur full-stack",
+          descr: "Ultrackathon réalisé dans le cadre du festival sur les effets spéciaux PIDS (Paris Images Digital Summit). Le but de cette hackathon longue durée est de réaliser 2 court-métrages interactifs (filmés à l'avance). J'ai donc travaillé en collaboration avec des développeurs sur une PWA permettant de proposer aux spectateurs de films d'intéragir en direct sur des éléments de l'histoire selon des choix prédéfinis.",
+          link: "http://interefx.fr/"
+        },
+        {
           date: "Juin. 2019 - Sept. 2019",
           poste: "Développeur back-end",
           descr: "Stage réalisé en tant que développeur back-end (framework Lumen) sur le projet d’intranet Inside de l’agence Maecia à Paris. Rôle de responsable back-end sur certains projets clients.",

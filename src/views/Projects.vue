@@ -1,28 +1,23 @@
 <template>
   <div id="projects" class="componentContainer">
     <div id="scrollBar">
-      <div id="displaySelection">
-        <ProjectsDisplayColumn @click.native="changeDisplay(0)"/>
-        <ProjectsDisplayRow @click.native="changeDisplay(1)"/>
-      </div>
     </div>
-    <div id="projectList" :class="getActiveProjectDisplay ? 'horizontal' : 'vertical'">
-      <div v-for="(project, index) in data" class="project" :class="project.uiClass === '' ? setRandomUi() : project.uiClass" :key="index">
+    <div id="projectList" class="horizontal">
+      <div v-for="(project, index) in data" class="project" :key="index">
         <div class="projectImg" @click="openDescription(index)" :id="'projectImg'+index" :ref="'projectImg'+index" :style="{'background-image': `url(${require('@/assets/projects/projectsImg/'+project.images.main.link)})`}">
           <p class="projectNumber">{{index + 1}}</p>
           <img v-if="project.images.main.link != ''" :alt="project.images.main.alt">
         </div>
-        <div class="projectName">
-          <p >{{project.name}}</p>
-          <div class="projectCategories">
-            <div v-for="(category) in project.categories" :style="{'background-color': `${category.color}`}" :key="category.name">
-              <p>{{ category.name }}</p>
-            </div>
-          </div>
+        <h2 class="projectName">{{project.name}}</h2>
+        <div class="projectKeywords">
+          <p v-for="(keyword, id) in project.keywords" :key="id">#{{ keyword }}</p>
         </div>
       </div>
     </div>
-    <Project v-if="getActiveProject.id != null"/>
+    <Project 
+      v-if="getActiveProject.id != null"
+      @leaving="scrollState = 'horizontal'"
+    />
   </div>
 </template>
 
@@ -44,11 +39,32 @@ export default {
   },
   data () {
     return {
-      tl: null
+      tl: null,
+      scrollState: 'horizontal' // horizontal || vertical
     }
   },
   methods: {
+    addListeners() {
+      window.addEventListener('wheel', this.manageScrollVariation)
+    },
+    removeListeners() {
+      window.removeEventListener('wheel', this.manageScrollVariation)
+    },
+    manageScrollVariation(e) {
+      if (this.scrollState == 'horizontal' && event.deltaY != 0) {
+      	// manually scroll horizonally instead
+        window.scroll(window.scrollX + event.deltaY * 20, window.scrollY)
+        
+        // prevent vertical scroll
+      	event.preventDefault()
+      }
+      return
+    },
     openDescription (index) { // Update active project when a click is trigger on a project
+
+
+      this.scrollState = 'vertical'
+
       const div = this.$refs['projectImg' + index]
       const pos = div[0].getBoundingClientRect()
 
@@ -72,13 +88,7 @@ export default {
       }, 0)
     },
     onAnimReverse () {
-      this.changeActiveProjectDisplay(this.getActiveProjectDisplay === 1 ? 0 : 1)
       this.deployProjects()
-    },
-    changeDisplay (val) { //Change projects display (vertical || horizontal)
-      const currentVal = this.getActiveProjectDisplay
-      if (currentVal === val) { return }
-      this.tl.reverse()
     },
     ...mapActions([
       'updateActiveProject',
@@ -94,13 +104,16 @@ export default {
       })
     },
     ...mapGetters([
-      'getActiveProject',
-      'getActiveProjectDisplay'
+      'getActiveProject'
     ])
   },
   mounted () {
     this.changeComponentLoaded(true) // When component is mounted, update state value to trigger page transition
     this.deployProjects()
+    this.addListeners()
+  },
+  destroyed () {
+    this.removeListeners()
   }
 }
 </script>
@@ -138,62 +151,18 @@ export default {
         flex-direction column
 
   .project
-    display flex
-    flex-direction row
     margin 100px
     opacity 0
     transform translateX(-50px)
 
-    @media screen and (max-width: 700px)
-      flex-direction column
-      align-items center
-
-    &:nth-child(2n)
-      flex-direction row-reverse
-      transform translateX(50px)
-
-      @media screen and (max-width: 700px)
-        flex-direction column
-
   .projectName
     font-weight bold
-    text-align left
-    margin 0 25px
-    display flex
-    flex-direction column
-    justify-content space-between
-
-  .projectStyle0
-    .projectImg
-      width 450px
-      height 600px
-      background-color #D7FFF1
-
-      @media screen and (max-width: 450px)
-        width 400px
-        height 500px
-
-  .projectStyle1
-    .projectImg
-      width 600px
-      height 400px
-      background-color #8CD790
-
-      @media screen and (max-width: 600px)
-        width 400px
-        height 280px
-
-  .projectStyle2
-    .projectImg
-      width 500px
-      height 500px
-      background-color #77AF9C
-
-      @media screen and (max-width: 500px)
-        width 400px
-        height 400px
+    font-size 2em
+    text-align center
 
   .projectImg
+    width 50vh
+    height 50vh
     position relative
     background no-repeat center center
     background-size cover
@@ -211,10 +180,10 @@ export default {
     font-size 50px
     font-family  ArchivoNarrow-Medium
 
-  .projectCategories
+  .projectKeywords
     p
-      text-align center
-      padding 5px
+      display inline
+      padding 0 15px
 
   #displaySelection
     display flex

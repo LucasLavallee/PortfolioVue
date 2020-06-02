@@ -10,8 +10,6 @@
       <div id="menu" class="menu">
         <router-link to="/" :event="''" @click.native.prevent="transitionOut('/','Home')" class="routerLink">Home</router-link>
         <router-link to="/projects" :event="''" @click.native.prevent="transitionOut('/projects','Projects')" class="routerLink">Projects</router-link>
-        <router-link to="/contact"  :event="''" @click.native.prevent="transitionOut('/contact', 'Contact')" class="routerLink">Send me something ... </router-link>
-
         <img src="./assets/leave.png" alt="menuIcon" @click="leaveMobileMenu()" id="leaveMobileMenu">
       </div>
     </div>
@@ -340,4 +338,5 @@ export default {
 
   .componentContainer
     padding-top 150px
+    box-sizing content-box
 </style>

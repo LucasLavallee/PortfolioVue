@@ -251,6 +251,10 @@ export default {
             font-size 5em
             margin 30px 0
 
+
+          @media screen and (max-width: 700px)
+            font-size 0.6em
+
     #projectMain, #projectTechnics, #ressources, #projectTeam
       display none
 

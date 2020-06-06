@@ -9,7 +9,7 @@
       </div>
       <div id="menu" class="menu">
         <router-link to="/" :event="''" @click.native.prevent="transitionOut('/','Home')" class="routerLink">Home</router-link>
-        <router-link to="/projects" :event="''" @click.native.prevent="transitionOut('/projects','Projects')" class="routerLink">Projects</router-link>
+        <router-link to="/projects" :event="''" @click.native.prevent="transitionOut('/projects','Projets')" class="routerLink">Projets</router-link>
         <img src="./assets/leave.png" alt="menuIcon" @click="leaveMobileMenu()" id="leaveMobileMenu">
       </div>
     </div>
@@ -62,6 +62,9 @@ export default {
       if (from === to) {
         return
       }
+
+      this.leaveMobileMenu()
+
       this.navigation = {
         'from': {
           path: this.$router.currentRoute.path,
@@ -211,7 +214,7 @@ export default {
 
   .panTransition
     position fixed
-    top 100%
+    top 100vh
     left 0
     width 100%
     height 100%
@@ -265,12 +268,16 @@ export default {
 
   #nav
     display flex
-    margin-top 50px
+    padding 20px 0
     position fixed
     top 0px
     z-index 5
     justify-content space-between
     width 100%
+    align-items center
+
+    @media screen and (max-width: 600px)
+      background #fff
 
     div
       margin 0 50px
@@ -319,6 +326,9 @@ export default {
   #mobile_menu
     display none
     align-items center
+    position fixed
+    right 20px
+    margin-top 20px
 
     img
       height 30px

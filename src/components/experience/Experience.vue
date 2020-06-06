@@ -24,6 +24,9 @@ export default {
         margin-top 50px
         opacity 0
         transform translateX(-50px)
+
+        @media screen and (max-width: 600px)
+            display block
     
     .descrExp
         color #5e5e5e

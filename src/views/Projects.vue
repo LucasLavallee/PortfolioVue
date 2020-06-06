@@ -9,7 +9,7 @@
           <img v-if="project.images.main.link != ''" >
         </div>
         <h2 class="projectName">{{project.name}}</h2>
-        <div class="projectKeywords">
+        <div class="projectKeywords"> 
           <p v-for="(keyword, id) in project.keywords" :key="id">#{{ keyword }}</p>
         </div>
       </div>
@@ -28,7 +28,8 @@ import Project from '@/components/projects/Project.vue'
 import ProjectsDisplayColumn from '@/components/svgIcons/ProjectsDisplayColumn.vue'
 import ProjectsDisplayRow from '@/components/svgIcons/ProjectsDisplayRow.vue'
 import { mapActions, mapGetters } from 'vuex'
-import { TimelineMax } from 'gsap'
+import { TimelineMax, gsap } from 'gsap'
+import { CSSPlugin } from 'gsap/CSSPlugin'
 
 export default {
   name: 'projects',
@@ -108,6 +109,7 @@ export default {
     ])
   },
   mounted () {
+    gsap.registerPlugin(CSSPlugin)
     this.changeComponentLoaded(true) // When component is mounted, update state value to trigger page transition
     this.deployProjects()
     this.addListeners()
@@ -156,6 +158,11 @@ export default {
     opacity 0
     transform translateX(-50px)
 
+    @media screen and (max-width: 700px)
+      margin 0 auto
+      padding-top 0px
+      margin-bottom 75px
+
   .projectName
     font-weight bold
     font-size 2em
@@ -171,8 +178,9 @@ export default {
     cursor pointer
 
     @media screen and (max-width: 700px)
-      width 100%
-      height auto
+      width 80vw
+      height 80vw
+      margin 0 auto
 
   .projectNumber
     position absolute

@@ -52,10 +52,10 @@
         },
         {
             "name": "Trickyroad",
-            "description": "Ce projet de fin d'études s est avéré très complet par sa multitude de domaine concernés. Le but de se projet était de réaliser un produit connecté dans le but d en faire une campagne de crownfunding. C est donc avec cet objectif en-tête que nous avons décidé de réaliser un plateau de jeu qui pourrait être contrôlé directement depuis son Smartphone.",
+            "description": "Ce projet de fin d'études s'est avéré très complet par sa multitude de domaine concernés. Le but de se projet était de réaliser un produit connecté dans le but d'en faire une campagne de crownfunding. C'est donc avec cet objectif en-tête que nous avons fait le choix de réaliser un plateau de jeu qui pourrait être contrôlé directement depuis son Smartphone.",
             "technics": [
-                "Pour cela, il a fallut répondre à divers enjeux techniques qui nous ont menés à l'utilisation d une connection bluetooth entre une appli développée pour les smartphone et un microcontrôleur ESP32 implanté dans le plateau de jeu.",
-                "Ce projet a été l occasion pour moi de découvrir le monde des microcontrôleur mais également React Native. De plus, nous avons sur la fin décidé de développer également une PWA me permettant d approfondir mes connaissances sur ce domaine.",
+                "Pour cela, il a fallut répondre à divers enjeux techniques qui nous ont menés à l'utilisation d'une connection bluetooth entre une application développée pour les smartphones et un microcontrôleur ESP32 implanté dans le plateau de jeu.",
+                "Ce projet a été l'occasion pour moi de découvrir le monde des microcontrôleur mais également React Native. De plus, nous avons sur la fin décidé de développer également une PWA me permettant d'approfondir mes connaissances sur ce domaine.",
                 "Ce projet s'est révélé être très complet et a permis d'exploiter une grande partie des compétences acquises au cours de mes 3 années à l'IMAC que ce soit par la programmation, la modélisation 3d (+ impression 3d), la réalisation de vidéo et de produits de communication."
             ],
             "link": "",

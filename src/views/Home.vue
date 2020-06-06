@@ -35,7 +35,8 @@
 import BackgroundGL from '@/components/backgroundGL/BackgroundGL.vue'
 import Experience from '@/components/experience/Experience.vue'
 import { mapActions } from 'vuex'
-import { TimelineMax } from 'gsap'
+import { TimelineMax, gsap } from 'gsap'
+import { CSSPlugin } from 'gsap/CSSPlugin'
 
 export default {
   name: 'home',
@@ -157,6 +158,7 @@ export default {
     window.removeEventListener('scroll', this.handleScroll) // remove eventListener on scroll
   },
   mounted () {
+    gsap.registerPlugin(CSSPlugin)
     this.changeComponentLoaded(true) // When component is mounted, update state value to trigger page transition
     this.updateHomeZoom(0)
   }
@@ -177,6 +179,10 @@ export default {
     display flex
     flex-direction row
     margin 0 20%
+
+    @media screen and ( max-width: 500px ) {
+      margin 0 5%
+    }
 
     #descr
       margin 20px 50px

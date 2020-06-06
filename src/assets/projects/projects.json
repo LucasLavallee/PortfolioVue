@@ -1,9 +1,254 @@
 {
     "projects": [
         {
+            "name": "Skylord",
+            "description": "Skylord est un jeu multijoueur en 3 dimensions disponible directement sur navigateur. Aucun téléchargement n’est nécessaire pour y jouer, il suffit de se rendre sur le site du jeu, de saisir un pseudonyme et de lancer une partie avec ses amis ou de rejoindre une partie avec des inconnus. Les joueurs préents dans une même partie vont alors combattre en prenant possession d’un avion doté d’armes afin de récupérer des points. Plusieurs manches ont lieu et le premier joueur à atteindre le seuil de point défini remporte la partie. Différentes fonctionnalités viennent s’ajouter en jeu telles que des bonus, un système de carburant, afin de diversifier l’expérience de jeu.",
+            "technics": [
+                "Ce projet est encore en cours de développement par une équipe de 3 développeurs dont je fais partie. Le projet utilise le framework VueJS pour le front et NodeJS pour le back-end (gestion des websockets). Pour ma part, je m'occupe principalement de l'architecture back-end qui permet à ce jour aux joueurs de créer des 'rooms' dans lesquelles ils peuvent inviter des amis. Une fois la partie lancée, les collisions entre les tirs et les avions sont également gérées par le serveur.",
+                "Pour ce qui est de la partie 3d avec ThreeJS, ce sont mes collègues Baptiste Mantovani et Florian Torrès qui s'en occupe en exploitant le plus possible les shaders qui nous permettent de maintenir une bonnne fluidité du jeu."
+            ],
+            "link": "",
+            "images": {
+                "main": {
+                    "link": "skylord/skylord.png",
+                    "alt": "skylord"
+                },
+                "others": [
+                    {
+                        "link": "skylord/media/skylord_1.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "skylord/media/skylord_2.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "skylord/media/skylord_3.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "skylord/media/skylord_4.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "skylord/media/skylord_5.png",
+                        "alt": ""
+                    }
+                ]
+            },
+            "category": "Webdev",
+            "keywords": ["NodeJS", "Websockets", "ThreeJS", "Multiplayer 3D Game"],
+            "ressources": [],
+            "team": [
+                {
+                    "name": "Baptiste Mantovani",
+                    "link": "http://baptistemantovani.fr/"
+                },
+                {
+                    "name": "Florian Torres",
+                    "link": "https://github.com/torresf"
+                }
+            ]
+        },
+        {
+            "name": "Trickyroad",
+            "description": "Ce projet de fin d'études s est avéré très complet par sa multitude de domaine concernés. Le but de se projet était de réaliser un produit connecté dans le but d en faire une campagne de crownfunding. C est donc avec cet objectif en-tête que nous avons décidé de réaliser un plateau de jeu qui pourrait être contrôlé directement depuis son Smartphone.",
+            "technics": [
+                "Pour cela, il a fallut répondre à divers enjeux techniques qui nous ont menés à l'utilisation d une connection bluetooth entre une appli développée pour les smartphone et un microcontrôleur ESP32 implanté dans le plateau de jeu.",
+                "Ce projet a été l occasion pour moi de découvrir le monde des microcontrôleur mais également React Native. De plus, nous avons sur la fin décidé de développer également une PWA me permettant d approfondir mes connaissances sur ce domaine.",
+                "Ce projet s'est révélé être très complet et a permis d'exploiter une grande partie des compétences acquises au cours de mes 3 années à l'IMAC que ce soit par la programmation, la modélisation 3d (+ impression 3d), la réalisation de vidéo et de produits de communication."
+            ],
+            "link": "",
+            "images": {
+                "main": {
+                    "link": "trickyroad/trickyroad.png",
+                    "alt": "trickyroad"
+                },
+                "others": [
+                    {
+                        "link": "trickyroad/media/trickyroad_1.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "trickyroad/media/trickyroad_2.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "trickyroad/media/trickyroad_3.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "trickyroad/media/trickyroad_4.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "trickyroad/media/trickyroad_5.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "trickyroad/media/trickyroad_6.jpg",
+                        "alt": ""
+                    }
+                ]
+            },
+            "category": "Webdev",
+            "keywords": ["Mobile", "PWA","VueJS", "ReactNative", "ESP32","Bluetooth", "Firebase", "Impression3D"],
+            "ressources": [
+                {
+                    "type": "link",
+                    "text": "Vidéo de présentation du concept",
+                    "link": "https://www.youtube.com/watch?v=jMkshotaZsI"
+                },
+                {
+                    "type": "github",
+                    "link": "https://github.com/LucasLavallee/Trickyroad-PWA"
+                }
+            ],
+            "team": [
+                {
+                    "name": "Axel Donadio",
+                    "link": "https://axeldonadio.com/"
+                },
+                {
+                    "name": "Baptiste Mantovani",
+                    "link": "http://baptistemantovani.fr/"
+                },
+                {
+                    "name": "Jeremy Ratsimandresy",
+                    "link": "https://github.com/jeremyrts"
+                },
+                {
+                    "name": "Manon Sebaoun",
+                    "link": "https://www.linkedin.com/in/manon-sebaoun-793b2b124"
+                }
+            ]
+        },
+        {
+            "name": "EdenIA",
+            "description": "Projet réalisé dans le cadre d'un cour de l'IMAC consacré à l'intelligence artificielle. ",
+            "technics": [
+                "Grâce à ThreeJS, nous avons pu mettre en avant diverses techniques connues d'intelligence artistique, à savoir les algorithmes génétiques ainsi que les L-System.",
+                "En prenant exemple sur la nature, nous avons donc créer un monde dans lequel il est possible de venir planter divers fruits et légumes qui vont par la suite se reproduire et évoluer en s'adaptant à leur environnement."    
+            ],
+            "link": "",
+            "images": {
+                "main": {
+                    "link": "edenIA/edenIA.png",
+                    "alt": "edenIA"
+                },
+                "others": [
+                    {
+                        "link": "edenIA/media/edenIA_1.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "edenIA/media/edenIA_2.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "edenIA/media/edenIA_3.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "edenIA/media/edenIA_4.png",
+                        "alt": ""
+                    }   
+                ]
+            },
+            "category": "Webdev",
+            "keywords": ["IA","VueJS", "ChartJS"],
+            "ressources": [
+                {
+                    "type": "github",
+                    "link": "https://github.com/LucasLavallee/Eden_IA"
+                }
+            ],
+            "team": [
+                {
+                    "name": "Jeremy Ratsimandresy",
+                    "link": "https://github.com/jeremyrts"
+                },
+                {
+                    "name": "Manon Sebaoun",
+                    "link": "https://www.linkedin.com/in/manon-sebaoun-793b2b124"
+                }
+            ]
+        },
+        {
+            "name": "PWA Hackathon IntereFX",
+            "description": "PWA produite dans le cadre de l'ultrackathon IntereFX sur une durée de 3 jours. L'objectif de cette hackathon longue durée, est de réaliser 2 films interactifs avec des effets spéciaux en temps réels. Chaque film va se voir attribuer 2 équipes d'une trentaines de personnes avec des profils très variés : développeur web / mobile, modélisateur 3d, développeur temps réel (Unreal Engine), communication ...  ",
+            "technics": [
+                "Pour ma part, j'ai donc travaillé sur une application permettant aux spectateurs d'intéragir avec des éléments de l'histoire des films. C'est donc accompagné de 2 autres développeurs que nous avons développé une PWA avec VueJS.",
+                "Nous avons mis en place plusieurs modes d'interactions au cours de ces 3 jours, le premier étant un choix simple entre deux possibilités. Ainsi, chaque spectateur va voir apparaitre sur son écran au moment voulu un choix qui devra faire. Une fois les réponses récupérées sur notre back-end (ici Firebase), le choix qui aura le plus de succès sera exécuté à l'écran.",
+                "D'autres moyens d'intéractions ont également été proposés exploitant le gyroscope ",
+                "Nous avons utilisé Firebase car il représentait pour nous un outil rapide à mettre en place afin de gérer la récupération des informations émises par les téléphones des spectateurs."        
+            ],
+            "link": "",
+            "images": {
+                "main": {
+                    "link": "interefx/intereFX_1.png",
+                    "alt": "interefx"
+                },
+                "others": [
+                    {
+                        "link": "interefx/media/intereFX_1.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "interefx/media/intereFX_2.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "interefx/media/intereFX_3.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "interefx/media/intereFX_4.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "interefx/media/intereFX_5.png",
+                        "alt": ""
+                    },
+                    {
+                        "link": "interefx/media/intereFX_6.png",
+                        "alt": ""
+                    }
+                ]
+            },
+            "category": "Webdev",
+            "keywords": ["Hackathon","PWA", "Firebase"],
+            "ressources": [
+                {
+                    "type": "link",
+                    "text": "Site intereFX",
+                    "link": "http://interefx.fr/"
+                },
+                {
+                    "type": "link",
+                    "text": "Festival PIDS",
+                    "link": "https://www.parisimages-digitalsummit.com/"
+                },
+                {
+                    "type": "github",
+                    "link": "https://github.com/LucasLavallee/IntereFX_pwa"
+                }
+            ],
+            "team": [
+                {
+                    "name": "Axel Donadio",
+                    "link": "https://axeldonadio.com/"
+                },
+                {
+                    "name": "Jeremy Ratsimandresy",
+                    "link": "https://github.com/jeremyrts"
+                }
+            ]
+        },
+        {
             "name": "Earth Visualisation",
             "description": "Projet personnel de data-visualisation utilisant la librairie Babylon.js. L'utilisateur peut se déplacer autour de la Terre est obtenir des informations complémentaires sur les différentes villes affichées.",
-            "technics": "",
+            "technics": [],
             "link": "",
             "images": {
                 "main": {
@@ -18,12 +263,14 @@
                 ]
             },
             "category": "Webdev",
-            "keywords": ["Webdesign","WebGL", "BabylonJS"]
+            "keywords": ["Webdesign","WebGL", "BabylonJS"],
+            "ressources": [],
+            "team": []
         },
         {
             "name": "Player audio",
             "description": "Projet personnel en cours de réalisation d'un player audio réalisé en JS avec la Web Audio API. Il permet à l'utilisateur d'écouter ses propres musiques et de bénéficier d'une interface simple regroupant le strict nécessaire (aléatoire, repeat, volume, timeline...). Un visualiseur audio est également présent au centre de l'interface.",
-            "technics": "",
+            "technics": [],
             "link": "",
             "images": {
                 "main": {
@@ -33,12 +280,14 @@
                 "others": []
             },
             "category": "Webdev",
-            "keywords": ["Webdesign","2D_Canvas"]
+            "keywords": ["Webdesign","2D_Canvas"],
+            "ressources": [],
+            "team": []
         },
         {
             "name": "GAsp",
             "description": "Projet tuteuré en cours de développement (2ème année IMAC) en collaboration avec Vincent Nozick (enseignant chercheur au laboratoire d'informatique Gaspard Monge (LIGM)), Hugo Hadfield (doctorant Cambridge University (UK)) et Steven De Keninck (Directeur Technique dans une société belge). Il s'agit d'une application web permettant de manipuler l'algèbre géométrique directement en javascript. Une serveur externe (Node.js) m'a permis de gérer la partie back-end que ce soit pour le système d'authentification ou encore la gestion du partage et des droits de modifications sur les projets. L'utilisateur a la possibilité de créer un compte sur le site afin d'enregistrer ses travaux et de les partager par la suite. Il dispose également de divers outils permettant de donner des droits de modifications sur ses projets à d'autres utilisateurs. Ce projet a été réalisé avec deux autres étudiants de l'IMAC. Pour ma part, je me suis occupé de l'interface principale (visualiseur, interface modulable...), ainsi que l'ensemble de la partie back-end.",
-            "technics": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a iaculis orci. Nam maximus sagittis faucibus. Etiam dictum ipsum leo, eget sagittis lorem sodales vitae. Ut ultricies sit amet nisl tincidunt tempor. Pellentesque commodo molestie varius. Vivamus malesuada euismod lorem eu fringilla. Aliquam semper accumsan placerat. Nullam tempus sapien in mauris convallis, a condimentum nisl viverra. Aenean sodales nulla sed sapien pretium ullamcorper. Morbi quis nisi in ante eleifend ornare. Praesent vulputate eget arcu a scelerisque. Mauris viverra ultrices mauris, vitae viverra urna tristique vel. Pellentesque scelerisque nisi id fringilla venenatis. ",
+            "technics": [],
             "link": "https://lucaslavallee.github.io/GAsp/",
             "images": {
                 "main": {
@@ -61,12 +310,23 @@
                 ]
             },
             "category": "Webdev",
-            "keywords": ["GanjaJS"]
+            "keywords": ["GanjaJS"],
+            "ressources": [],
+            "team": [
+                {
+                    "name": "Emilie Corradi",
+                    "link": "https://portfolio.erthia.fr/"
+                },
+                {
+                    "name": "Amina Fadili",
+                    "link": "http://www.aminaphotography.portfoliobox.me/"
+                }
+            ]
         },
         {
             "name": "Run In The Valley",
             "description": "Jeu réalisé au sein de l'IMAC en groupe avec Audrey Combe et Nina De Castro. Il s'agit d'un jeu reprenant les caractéristiques et fonctionnalités du jeu mobile Temple Run dans un univers s'inspirant du jeu Monument Valley. Le joueur arrive sur un menu principal dans lequel il va pouvoir lancer une partie. Chaque partie génère un niveau aléatoire dans lequel le joueur va devoir avancer le plus loin possible et récolter le maximum de pièces. Mais attention, de nombreux obstacles viennent parsemer l'ensemble du niveau. Un système de score est mis en place pour permettre aux différents joueurs de se comparer. Il s'agit du premier jeu que nous avons réalisé en C++ avec OpenGL 3.1. (GLSL pour les shaders)",
-            "technics": "",
+            "technics": [],
             "link": "",
             "images": {
                 "main": {
@@ -89,12 +349,23 @@
                 ]
             },
             "category": "Prog",
-            "keywords":["3D", "OpenGL"]
+            "keywords":["3D", "OpenGL"],
+            "ressources": [],
+            "team": [
+                {
+                    "name": "Audrey Combe",
+                    "link": "https://www.linkedin.com/in/audrey-combe-b64776105/"
+                },
+                {
+                    "name": "Nina De Castro",
+                    "link": "https://www.ninadecastro.com/"
+                }
+            ]
         },
         {
             "name": "Pont-en-Royans 3D",
             "description": "Environnement 3D s'inspirant du village Pont-en-Royans (Isère) réalisé dans le cadre du cours de Création 3D de l'IMAC. ",
-            "technics": "",
+            "technics": [],
             "link": "https://vimeo.com/309653208",
             "images": {
                 "main": {
@@ -113,12 +384,14 @@
                 ]
             },
             "category": "Modelisation",
-            "keywords":["Blender", "3D"]
+            "keywords":["Blender", "3D"],
+            "ressources": [],
+            "team": []
         },
         {
             "name": "Temple Blender",
             "description": "Test d'un environnement 3D fait sur Blender avec le moteur de rendu Blender Cycles.",
-            "technics": "",
+            "technics": [],
             "link": "",
             "images": {
                 "main": {
@@ -145,7 +418,9 @@
                 ]
             },
             "category": "Modelisation",
-            "keywords": ["Blender", "3D"]
+            "keywords": ["Blender", "3D"],
+            "ressources": [],
+            "team": []
         }
     ]
 }

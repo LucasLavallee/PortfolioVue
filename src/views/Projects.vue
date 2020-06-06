@@ -6,7 +6,7 @@
       <div v-for="(project, index) in data" class="project" :key="index">
         <div class="projectImg" @click="openDescription(index)" :id="'projectImg'+index" :ref="'projectImg'+index" :style="{'background-image': `url(${require('@/assets/projects/projectsImg/'+project.images.main.link)})`}">
           <p class="projectNumber">{{index + 1}}</p>
-          <img v-if="project.images.main.link != ''" :alt="project.images.main.alt">
+          <img v-if="project.images.main.link != ''" >
         </div>
         <h2 class="projectName">{{project.name}}</h2>
         <div class="projectKeywords">
@@ -151,7 +151,8 @@ export default {
         flex-direction column
 
   .project
-    margin 100px
+    margin 0 100px
+    padding-top 100px
     opacity 0
     transform translateX(-50px)
 
@@ -167,6 +168,7 @@ export default {
     background no-repeat center center
     background-size cover
     box-shadow 0px 0px 38px -3px rgba(209,209,209,0.57)
+    cursor pointer
 
     @media screen and (max-width: 700px)
       width 100%
@@ -181,9 +183,14 @@ export default {
     font-family  ArchivoNarrow-Medium
 
   .projectKeywords
+    display flex
+    width 50vh
+    flex-wrap wrap
+    justify-content center
+    
     p
-      display inline
       padding 0 15px
+      margin 0
 
   #displaySelection
     display flex

@@ -249,7 +249,7 @@ export default {
 
   #timelineExp
     width 5px 
-    background-color #ff3c38
+    background-color #a9e7da
     position absolute
     height 0%
     left -50px

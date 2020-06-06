@@ -8,11 +8,24 @@
                     <div id="projectName">
                         <h2>{{getProjects().name}}</h2>
                     </div>
-                    <div id="projectMain" class="bold">
+                    <div id="projectMain" class="bold active">
                         <p>{{getProjects().description}}</p>
                     </div>
-                    <div id="projectTechnics" class="">
-                        <p>{{getProjects().technics}}</p>
+                    <div id="projectTechnics" class="active">
+                        <p v-for="(technic, id) in getProjects().technics" :key="id">{{technic}}</p>
+                    </div>
+                    <div :class="getProjects().team.length > 0 ? 'active': ''" id="projectTeam">
+                      <h2>Equipe: </h2>
+                      <a v-for="(member, idMember) in getProjects().team" :href="member.link" :key="idMember" target="_blank">{{member.name}}</a>
+                    </div>
+                    <div id = "ressources" class="active">
+                        <h2>Ressources: </h2>
+                        <p v-if="getProjects().ressources.length === 0">---</p>
+                        <div v-for="(ressource, id) in getProjects().ressources" :key="id" class="ressource">
+                            <a v-if="ressource.type === 'link'" :href="ressource.link" target="_blank">{{ressource.text}}</a>
+                            <p v-if="ressource.type === 'file'" @click="downloadRessource(ressource.link)">{{ressource.text}}</p>
+                            <a v-if="ressource.type === 'github'" :href="ressource.link" target="_blank"><img src="@/assets/github.png"></a>
+                        </div>
                     </div>
                 </div>
 
@@ -48,6 +61,8 @@ export default {
     this.deployedProject()
   },
   methods: {
+    downloadRessource(url) {
+    },
     getProjects () {
       const active = this.getActiveProject.id
       return store.state.projects[active]
@@ -79,6 +94,16 @@ export default {
           duration: 0.3
         }, 0.4)
         .to('#projectTechnics', {
+          opacity: 1,
+          x: 0,
+          duration: 0.3
+        }, 0.4)
+        .to('#projectTeam', {
+          opacity: 1,
+          x: 0,
+          duration: 0.3
+        }, 0.4)
+        .to('#ressources', {
           opacity: 1,
           x: 0,
           duration: 0.3
@@ -226,9 +251,13 @@ export default {
             font-size 5em
             margin 30px 0
 
-    #projectMain, #projectTechnics
+    #projectMain, #projectTechnics, #ressources, #projectTeam
+      display none
+
+    #projectMain.active, #projectTechnics.active, #ressources.active, #projectTeam.active
         transform translateX(50px)
         opacity 0
+        display block
 
     #bottomPanel
         position fixed
@@ -251,5 +280,12 @@ export default {
     .galleryImg
         opacity 0
         transform translate3d(0, -20px, 0)
+
+    .ressource a, #projectTeam a
+      display block
+      font-weight bold
+      color #257FD9
+
+    
 
 </style>
